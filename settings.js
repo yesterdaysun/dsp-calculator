@@ -14,7 +14,7 @@ limitations under the License.*/
 import {DEFAULT_RATE, DEFAULT_RATE_PRECISION, DEFAULT_COUNT_PRECISION, longRateNames} from "./align.js"
 import {dropdown} from "./dropdown.js"
 import {DEFAULT_TAB, clickTab} from "./events.js"
-import {spec, resourcePurities, DEFAULT_BELT} from "./factory.js"
+import {spec, resourcePurities, DEFAULT_BELT, DEFAULT_ASSEMBLER} from "./factory.js"
 import {Rational} from "./rational.js"
 
 // There are several things going on with this control flow. Settings should
@@ -177,6 +177,46 @@ function renderBelts(settings) {
         .on("change", beltHandler)
     beltOption.append("label")
         .attr("for", d => "belt." + d.key)
+        .append("img")
+        .classed("icon", true)
+        .attr("src", d => d.iconPath())
+        .attr("width", 32)
+        .attr("height", 32)
+        .attr("title", d => d.name)
+}
+
+// assembler
+
+function assemblerHandler(assembler) {
+    spec.assembler = assembler
+    spec.updateSolution()
+}
+
+function renderAssemblers(settings) {
+    let assemblerKey = DEFAULT_ASSEMBLER
+    if (settings.has("assembler")) {
+        assemblerKey = settings.get("assembler")
+    }
+    spec.assembler = spec.assemblers.get(assemblerKey)
+
+    let assemblers = []
+    for (let [assemblerKey, assembler] of spec.assemblers) {
+        assemblers.push(assembler)
+    }
+    let form = d3.select("#assembler_selector")
+    form.selectAll("*").remove()
+    let assemblerOption = form.selectAll("span")
+        .data(assemblers)
+        .join("span")
+    assemblerOption.append("input")
+        .attr("id", d => "assembler." + d.key)
+        .attr("type", "radio")
+        .attr("name", "assembler")
+        .attr("value", d => d.key)
+        .attr("checked", d => d === spec.assembler ? "" : null)
+        .on("change", assemblerHandler)
+    assemblerOption.append("label")
+        .attr("for", d => "assembler." + d.key)
         .append("img")
         .classed("icon", true)
         .attr("src", d => d.iconPath())
@@ -353,6 +393,7 @@ export function renderSettings(settings) {
     renderRateOptions(settings)
     renderPrecisions(settings)
     renderBelts(settings)
+    renderAssemblers(settings)
     renderAltRecipes(settings)
     renderResources(settings)
     renderTab(settings)

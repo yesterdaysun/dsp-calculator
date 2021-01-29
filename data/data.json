@@ -4,6 +4,11 @@
         {"name": "Conveyor belt MK.II(高速传送带)", "key_name": "belt2", "rate": 720},
         {"name": "Conveyor belt MK.III(极速传送带)", "key_name": "belt3", "rate": 1800}
     ],
+    "assemblers": [
+        {"name": "Assembling machine Mk.I(制造台 Mk.I)", "key_name": "assembler1", "rate": 0.75},
+        {"name": "Assembling machine Mk.II(制造台 Mk.II)", "key_name": "assembler2", "rate": 1.0},
+        {"name": "Assembling machine Mk.III(制造台 Mk.III)", "key_name": "assembler3", "rate": 1.5}
+    ],
     "buildings": [
         {"name": "Assembling machine Mk.I(制造台 Mk.I)", "key_name": "constructor", "category": "crafting1", "power": 4, "max": 4},
         {"name": "Smelter(电弧熔炉)", "key_name": "foundry", "category": "smelting1", "power": 16, "max": 4},

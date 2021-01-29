@@ -139,6 +139,27 @@ input.prec {
 #belt_selector input[type="radio"]:checked + label {
     background: var(--accent);
 }
+
+#assembler_selector input[type="radio"] {
+    display: none;
+}
+#assembler_selector input[type="radio"] + label {
+    cursor: pointer;
+    background: var(--light);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin: 2px;
+    padding: 2px;
+}
+#assembler_selector input[type="radio"] + label:hover {
+    background: var(--bright);
+}
+#assembler_selector input[type="radio"]:checked + label {
+    background: var(--accent);
+}
+
 table.resource {
     border-collapse: collapse;
 }

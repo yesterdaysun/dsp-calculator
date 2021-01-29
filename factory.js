@@ -32,6 +32,7 @@ export let resourcePurities = [
 export let DEFAULT_PURITY = resourcePurities[1]
 
 export let DEFAULT_BELT = "belt1"
+export let DEFAULT_ASSEMBLER = "assembler1"
 
 class FactorySpecification {
     constructor() {
@@ -40,6 +41,7 @@ class FactorySpecification {
         this.recipes = null
         this.buildings = null
         this.belts = null
+        this.assemblers = null
 
         this.itemTiers = []
 
@@ -56,13 +58,14 @@ class FactorySpecification {
         this.altRecipes = new Map()
 
         this.belt = null
+        this.assembler = null
 
         this.ignore = new Set()
 
         this.format = new Formatter()
     }
 
-    setData(items, recipes, buildings, belts) {
+    setData(items, recipes, buildings, belts, assemblers) {
         this.items = items
         let tierMap = new Map()
         for (let [itemKey, item] of items) {
@@ -93,6 +96,8 @@ class FactorySpecification {
         }
         this.belts = belts
         this.belt = belts.get(DEFAULT_BELT)
+        this.assemblers = assemblers
+        this.assembler = belts.get(DEFAULT_ASSEMBLER)
         this.initMinerSettings()
         // this.initOverclockSettings()
     }
@@ -107,15 +112,6 @@ class FactorySpecification {
                 // Default to normal purity.
                 let purity = DEFAULT_PURITY
                 this.minerSettings.set(recipe, {miner, purity})
-            }
-        }
-    }
-
-    initOverclockSettings() {
-        for (let [recipeKey, recipe] of this.recipes) {
-            if (recipe.category === "crafting1") {
-                let ratio = Rational.from_float(1.0)
-                spec.setOverclock(recipe, ratio)
             }
         }
     }
@@ -243,7 +239,6 @@ class FactorySpecification {
     }
 
     solve() {
-        this.initOverclockSettings()
         let totals = new Totals()
         for (let target of this.buildTargets) {
             let subtotals = target.item.produce(this, target.getRate(), this.ignore)

@@ -12,6 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 import { Rational, zero, one } from "./rational.js"
+import {spec} from "./factory.js"
 
 export class Ingredient {
     constructor(item, amount) {
@@ -35,7 +36,14 @@ class Recipe {
     }
     gives(item) {
         if (this.product.item === item) {
-            return this.product.amount
+            let assemblerRate = Rational.from_float(1.0)
+            if (this.category === "crafting1") {
+                if (this.category === "crafting1") {
+                    assemblerRate = spec.assembler.rate
+                }
+                assemblerRate = spec.assembler.rate
+            }
+            return this.product.amount.mul(assemblerRate)
         }
         return null
     }
