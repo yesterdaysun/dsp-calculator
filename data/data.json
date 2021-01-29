@@ -1,0 +1,853 @@
+{
+    "belts": [
+        {"name": "Conveyor belt MK.I(传送带)", "key_name": "belt1", "rate": 360},
+        {"name": "Conveyor belt MK.II(高速传送带)", "key_name": "belt2", "rate": 720},
+        {"name": "Conveyor belt MK.III(极速传送带)", "key_name": "belt3", "rate": 1800}
+    ],
+    "buildings": [
+        {"name": "Assembling machine Mk.I(制造台 Mk.I)", "key_name": "constructor", "category": "crafting1", "power": 4, "max": 4},
+        {"name": "Smelter(电弧熔炉)", "key_name": "foundry", "category": "smelting1", "power": 16, "max": 4},
+        {"name": "Matrix lab(矩阵实验室)", "key_name": "matrix_lab", "category": "matrix_lab", "power": 16, "max": 4},
+        {"name": "Chemical plant(化工厂)", "key_name": "chemical_plant", "category": "chemical_plant", "power": 16, "max": 4},
+        {"name": "Oil refinery(原油精炼厂)", "key_name": "oil_refinery", "category": "oil_refinery", "power": 16, "max": 4}
+    ],
+    "miners": [
+        {"name": "Mining machine(采矿机)", "key_name": "miner-mk1", "category": "mineral", "base_rate": 180, "power": 5}
+    ],
+    "items": [
+        {"name": "Iron ore(铁矿)", "key_name": "iron_ore", "tier": 0, "stack_size": 100},
+        {"name": "Copper ore(铜矿)", "key_name": "copper_ore", "tier": 0, "stack_size": 100},
+        {"name": "Stone ore(石矿)", "key_name": "stone_ore", "tier": 0, "stack_size": 100},
+        {"name": "Coal ore(煤矿)", "key_name": "coal_ore", "tier": 0, "stack_size": 100},
+        {"name": "Silicon ore(硅石)", "key_name": "silicon_ore", "tier": 0, "stack_size": 100},
+        {"name": "Titanium ore(钛矿)", "key_name": "titanium_ore", "tier": 0, "stack_size": 100},
+        {"name": "Water(水)", "key_name": "water", "tier": 0, "stack_size": 20},
+        {"name": "Crude oil(原油)", "key_name": "crude_oil", "tier": 0, "stack_size": 20},
+        {"name": "Hydrogen(氢)", "key_name": "hydrogen", "tier": 0, "stack_size": 20},
+        {"name": "Deuterium(氘)", "key_name": "deuterium", "tier": 0, "stack_size": 20},
+        {"name": "Antimatter(反物质)", "key_name": "antimatter", "tier": 0, "stack_size": 20},
+        {"name": "Kimberlite ore(金伯利矿石)", "key_name": "kimberlite_ore", "tier": 0, "stack_size": 50},
+        {"name": "Iron ingot(铁块)", "key_name": "iron_ingot", "tier": 1, "stack_size": 100},
+        {"name": "Copper ingot(铜块)", "key_name": "copper_ingot", "tier": 1, "stack_size": 100},
+        {"name": "Stone(石材)", "key_name": "stone", "tier": 1, "stack_size": 100},
+        {"name": "Energetic graphite(高能石墨)", "key_name": "energetic_graphite", "tier": 1, "stack_size": 100},
+        {"name": "High-purity silicon(高纯硅块)", "key_name": "high-purity_silicon", "tier": 1, "stack_size": 100},
+        {"name": "Titanium ingot(钛块)", "key_name": "titanium_ingot", "tier": 1, "stack_size": 100},
+        {"name": "Sulfuric acid(硫酸)", "key_name": "sulfuric_acid", "tier": 1, "stack_size": 20},
+        {"name": "Refined oil(精炼油)", "key_name": "refined_oil", "tier": 1, "stack_size": 20},
+        {"name": "Hydrogen fuel rod(液氢燃料棒)", "key_name": "hydrogen_fuel_rod", "tier": 1, "stack_size": 30},
+        {"name": "Deuteron fuel rod(氘核燃料棒)", "key_name": "deuteron_fuel_rod", "tier": 1, "stack_size": 20},
+        {"name": "Antimatter fuel rod(反物质燃料棒)", "key_name": "antimatter_fuel_rod", "tier": 1, "stack_size": 20},
+        {"name": "Fractal silicon(分形硅)", "key_name": "fractal_silicon", "tier": 1, "stack_size": 50},
+        {"name": "Magnet(磁铁)", "key_name": "magnet", "tier": 2, "stack_size": 100},
+        {"name": "Magnetic coil(磁线圈)", "key_name": "magnetic_coil", "tier": 2, "stack_size": 200},
+        {"name": "Glass(玻璃)", "key_name": "glass", "tier": 2, "stack_size": 100},
+        {"name": "Diamond(金刚石)", "key_name": "diamond", "tier": 2, "stack_size": 100},
+        {"name": "Crystal silicon(晶格硅)", "key_name": "crystal_silicon", "tier": 2, "stack_size": 100},
+        {"name": "Titanium alloy(钛合金)", "key_name": "titanium_alloy", "tier": 2, "stack_size": 100},
+        {"name": "Fire ice(可燃冰)", "key_name": "fire_ice", "tier": 2, "stack_size": 50},
+        {"name": "Plastic(塑料)", "key_name": "plastic", "tier": 2, "stack_size": 100},
+        {"name": "Organic crystal(有机晶体)", "key_name": "organic_crystal", "tier": 2, "stack_size": 100},
+        {"name": "Graphene(石墨烯)", "key_name": "graphene", "tier": 2, "stack_size": 100},
+        {"name": "Thruster(推进器)", "key_name": "thruster", "tier": 2, "stack_size": 100},
+        {"name": "Optical grating crystal(光栅晶体)", "key_name": "optical_grating_crystal", "tier": 2, "stack_size": 50},
+        {"name": "Steel(钢材)", "key_name": "steel", "tier": 3, "stack_size": 100},
+        {"name": "Circuit board(电路板)", "key_name": "circuit_board", "tier": 3, "stack_size": 200},
+        {"name": "Prism(棱镜)", "key_name": "prism", "tier": 3, "stack_size": 100},
+        {"name": "Electric motor(电动机)", "key_name": "electric_motor", "tier": 3, "stack_size": 50},
+        {"name": "Microcrystalline component(微晶元件)", "key_name": "microcrystalline_component", "tier": 3, "stack_size": 200},
+        {"name": "Accelerant Mk.I(促进剂 Mk.I)", "key_name": "accelerant_mk_i", "tier": 3, "stack_size": 100},
+        {"name": "Casimir crystal(卡西米尔水晶)", "key_name": "casimir_crystal", "tier": 3, "stack_size": 50},
+        {"name": "Strange matter(奇异物质)", "key_name": "strange_matter", "tier": 3, "stack_size": 50},
+        {"name": "Titanium crystal(钛水晶)", "key_name": "titanium_crystal", "tier": 3, "stack_size": 100},
+        {"name": "Carbon nanotube(碳纳米管)", "key_name": "carbon_nanotube", "tier": 3, "stack_size": 100},
+        {"name": "Reinforced thruster(加力推进器)", "key_name": "reinforced_thruster", "tier": 3, "stack_size": 50},
+        {"name": "Spiniform stalagmite crystal(刺状石笋晶体)", "key_name": "spiniform_stalagmite_crystal", "tier": 3, "stack_size": 50},
+        {"name": "Gear(齿轮)", "key_name": "gear", "tier": 4, "stack_size": 100},
+        {"name": "Plasma exciter(电浆激发器)", "key_name": "plasma_exciter", "tier": 4, "stack_size": 50},
+        {"name": "Photon combiner(光子合成器)", "key_name": "photon_combiner", "tier": 4, "stack_size": 100},
+        {"name": "Electromagnetic turbine(电磁涡轮)", "key_name": "electromagnetic_turbine", "tier": 4, "stack_size": 50},
+        {"name": "Processor(处理器)", "key_name": "processor", "tier": 4, "stack_size": 200},
+        {"name": "Accelerant Mk.II(促进剂 Mk.II)", "key_name": "accelerant_mk_ii", "tier": 4, "stack_size": 100},
+        {"name": "Annihilation constraint sphere(湮灭约束球)", "key_name": "annihilation_constraint_sphere", "tier": 4, "stack_size": 20},
+        {"name": "Titanium glass(钛玻璃)", "key_name": "titanium_glass", "tier": 4, "stack_size": 100},
+        {"name": "Particle broadband(粒子宽带)", "key_name": "particle_broadband", "tier": 4, "stack_size": 50},
+        {"name": "Logistics drone(物流无人机)", "key_name": "logistics_drone", "tier": 4, "stack_size": 100},
+        {"name": "Unipolar magnet(单极磁铁)", "key_name": "unipolar_magnet", "tier": 4, "stack_size": 50},
+        {"name": "Foundation(地基)", "key_name": "foundation", "tier": 5, "stack_size": 1000},
+        {"name": "Critical photon(临界光子)", "key_name": "critical_photon", "tier": 5, "stack_size": 100},
+        {"name": "Particle container(粒子容器)", "key_name": "particle_container", "tier": 5, "stack_size": 50},
+        {"name": "Super-magnetic ring(超磁环)", "key_name": "super-magnetic_ring", "tier": 5, "stack_size": 50},
+        {"name": "Graviton lens(引力透镜)", "key_name": "graviton_lens", "tier": 5, "stack_size": 50},
+        {"name": "Accelerant Mk.III(促进剂Mk.III)", "key_name": "accelerant_mk_iii", "tier": 5, "stack_size": 100},
+        {"name": "Space warper(空间折跃)", "key_name": "space_warper", "tier": 5, "stack_size": 100},
+        {"name": "Plane filter(滤波器)", "key_name": "plane_filter", "tier": 5, "stack_size": 200},
+        {"name": "Quantum chip(量子芯片)", "key_name": "quantum_chip", "tier": 5, "stack_size": 200},
+        {"name": "Logistics vessel(运输船)", "key_name": "logistics_vessel", "tier": 5, "stack_size": 20},
+        {"name": "Log(木材)", "key_name": "log", "tier": 5, "stack_size": 100},
+        {"name": "Electromagnetic matrix(电磁矩阵)", "key_name": "electromagnetic_matrix", "tier": 6, "stack_size": 200},
+        {"name": "Energy matrix(能量矩阵)", "key_name": "energy_matrix", "tier": 6, "stack_size": 200},
+        {"name": "Structure matrix(结构矩阵)", "key_name": "structure_matrix", "tier": 6, "stack_size": 200},
+        {"name": "Information matrix(信息矩阵)", "key_name": "information_matrix", "tier": 6, "stack_size": 200},
+        {"name": "Gravity matrix(引力矩阵)", "key_name": "gravity_matrix", "tier": 6, "stack_size": 200},
+        {"name": "Universe matrix(宇宙矩阵)", "key_name": "universe_matrix", "tier": 6, "stack_size": 200},
+        {"name": "Solar sail(太阳帆)", "key_name": "solar_sail", "tier": 6, "stack_size": 200},
+        {"name": "Frame material(框架)", "key_name": "frame_material", "tier": 6, "stack_size": 50},
+        {"name": "Dyson sphere component(戴森球组件)", "key_name": "dyson_sphere_component", "tier": 6, "stack_size": 50},
+        {"name": "Small carrier rocket(小型运载火箭)", "key_name": "small_carrier_rocket", "tier": 6, "stack_size": 10},
+        {"name": "Plant fuel(植物燃料)", "key_name": "plant_fuel", "tier": 6, "stack_size": 500},
+        {"name": "Tesla tower(电力感应塔)", "key_name": "tesla_tower", "tier": 0, "stack_size": 100},
+        {"name": "Wireless power tower(无线输电塔)", "key_name": "wireless_power_tower", "tier": 0, "stack_size": 50},
+        {"name": "Satellite substation(卫星变电站)", "key_name": "satellite_substation", "tier": 0, "stack_size": 20},
+        {"name": "Wind turbine(风力涡轮机)", "key_name": "wind_turbine", "tier": 0, "stack_size": 20},
+        {"name": "Thermal power station(火力发电厂)", "key_name": "thermal_power_station", "tier": 0, "stack_size": 20},
+        {"name": "Solar panel(太阳能板)", "key_name": "solar_panel", "tier": 0, "stack_size": 20},
+        {"name": "Mini fusion power station(微型聚变发电站)", "key_name": "mini_fusion_power_station", "tier": 0, "stack_size": 20},
+        {"name": "Accumulator(蓄电器)", "key_name": "accumulator", "tier": 0, "stack_size": 20},
+        {"name": "Accumulator(full)(蓄电器(满))", "key_name": "accumulator_full", "tier": 0, "stack_size": 20},
+        {"name": "Energy exchanger(能量枢纽)", "key_name": "energy_exchanger", "tier": 0, "stack_size": 10},
+        {"name": "Ray receiver(射线接收站)", "key_name": "ray_receiver", "tier": 0, "stack_size": 10},
+        {"name": "Artificial star(人造恒星)", "key_name": "artificial_star", "tier": 0, "stack_size": 10},
+        {"name": "Conveyor belt MK.I(传送带)", "key_name": "conveyor_belt_mk_i", "tier": 1, "stack_size": 200},
+        {"name": "Conveyor belt MK.II(高速传送带)", "key_name": "conveyor_belt_mk_ii", "tier": 1, "stack_size": 200},
+        {"name": "Conveyor belt MK.III(极速传送带)", "key_name": "conveyor_belt_mk_iii", "tier": 1, "stack_size": 200},
+        {"name": "Splitter(4-direction)(四向分流器)", "key_name": "splitter_4-direction", "tier": 1, "stack_size": 50},
+        {"name": "Storage MK.I(小型储物仓)", "key_name": "storage_mk_i", "tier": 1, "stack_size": 50},
+        {"name": "Storage MK.II(大型储物仓)", "key_name": "storage_mk_ii", "tier": 1, "stack_size": 20},
+        {"name": "Storage tank(储液罐)", "key_name": "storage_tank", "tier": 1, "stack_size": 50},
+        {"name": "Planetary Logistics Station(行星内物流运输站)", "key_name": "planetary_logistics_station", "tier": 1, "stack_size": 10},
+        {"name": "Interstellar Logistics Station(星际物流运输站)", "key_name": "interstellar_logistics_station", "tier": 1, "stack_size": 10},
+        {"name": "Orbit collector(轨道采集器)", "key_name": "orbit_collector", "tier": 1, "stack_size": 10},
+        {"name": "EM-Rail Ejector(电磁轨道弹出器)", "key_name": "em-rail_ejector", "tier": 1, "stack_size": 20},
+        {"name": "Sorter MK.I(分拣器)", "key_name": "sorter_mk_i", "tier": 2, "stack_size": 100},
+        {"name": "Sorter MK.II(高速分拣器)", "key_name": "sorter_mk_ii", "tier": 2, "stack_size": 100},
+        {"name": "Sorter MK.III(极速分拣器)", "key_name": "sorter_mk_iii", "tier": 2, "stack_size": 100},
+        {"name": "Mining machine(采矿机)", "key_name": "mining_machine", "tier": 2, "stack_size": 20},
+        {"name": "Water pump(抽水站)", "key_name": "water_pump", "tier": 2, "stack_size": 20},
+        {"name": "Oil extractor(原油萃取站)", "key_name": "oil_extractor", "tier": 2, "stack_size": 10},
+        {"name": "Oil refinery(原油精炼厂)", "key_name": "oil_refinery", "tier": 2, "stack_size": 20},
+        {"name": "Miniature particle collider(微型粒子对撞机)", "key_name": "miniature_particle_collider", "tier": 2, "stack_size": 10},
+        {"name": "Matrix lab(矩阵实验室)", "key_name": "matrix_lab", "tier": 2, "stack_size": 20},
+        {"name": "Vertical launching silo(垂直发射井)", "key_name": "vertical_launching_silo", "tier": 2, "stack_size": 10},
+        {"name": "Assembling machine Mk.I(制造台 Mk.I)", "key_name": "assembling_machine_mk_i", "tier": 3, "stack_size": 50},
+        {"name": "Assembling machine Mk.II(制造台 Mk.II)", "key_name": "assembling_machine_mk_ii", "tier": 3, "stack_size": 50},
+        {"name": "Assembling machine Mk.III(制造台 Mk.III)", "key_name": "assembling_machine_mk_iii", "tier": 3, "stack_size": 50},
+        {"name": "Smelter(电弧熔炉)", "key_name": "smelter", "tier": 3, "stack_size": 50},
+        {"name": "Spray coater(喷涂机)", "key_name": "spray_coater", "tier": 3, "stack_size": 20},
+        {"name": "Chemical plant(化工厂)", "key_name": "chemical_plant", "tier": 3, "stack_size": 20},
+        {"name": "Fractionator(分馏器)", "key_name": "fractionator", "tier": 3, "stack_size": 20},
+        {"name": "Power Shard", "key_name": "power-shard", "tier": 2, "stack_size": 100}
+    ],
+    "recipes": [
+        {
+            "name": "Iron ingot(铁块)", "key_name": "iron_ingot", "category": "smelting1",
+            "time": 1,
+            "ingredients": [["iron_ore", 1]],
+            "product": ["iron_ingot", 1]
+        },
+        {
+            "name": "Magnet(磁铁)", "key_name": "magnet", "category": "smelting1",
+            "time": 1.5,
+            "ingredients": [["iron_ore", 1]],
+            "product": ["magnet", 1]
+        },
+        {
+            "name": "Copper ingot(铜块)", "key_name": "copper_ingot", "category": "smelting1",
+            "time": 1,
+            "ingredients": [["copper_ore", 1]],
+            "product": ["copper_ingot", 1]
+        },
+        {
+            "name": "Stone(石材)", "key_name": "stone", "category": "smelting1",
+            "time": 1,
+            "ingredients": [["stone_ore", 1]],
+            "product": ["stone", 1]
+        },
+        {
+            "name": "Gear(齿轮)", "key_name": "gear", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["iron_ingot", 1]],
+            "product": ["gear", 1]
+        },
+        {
+            "name": "Magnetic coil(磁线圈)", "key_name": "magnetic_coil", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["magnet", 2], ["copper_ingot", 1]],
+            "product": ["magnetic_coil", 2]
+        },
+        {
+            "name": "Wind turbine(风力涡轮机)", "key_name": "wind_turbine", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["iron_ingot", 6], ["gear", 1], ["magnetic_coil", 3]],
+            "product": ["wind_turbine", 1]
+        },
+        {
+            "name": "Tesla tower(电力感应塔)", "key_name": "tesla_tower", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["iron_ingot", 2], ["magnetic_coil", 1]],
+            "product": ["tesla_tower", 1]
+        },
+        {
+            "name": "Electromagnetic matrix(电磁矩阵)", "key_name": "electromagnetic_matrix", "category": "matrix_lab",
+            "time": 3,
+            "ingredients": [["magnetic_coil", 1], ["circuit_board", 1]],
+            "product": ["electromagnetic_matrix", 1]
+        },
+        {
+            "name": "Matrix lab(矩阵实验室)", "key_name": "matrix_lab", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["iron_ingot", 8], ["glass", 4], ["circuit_board", 4], ["magnetic_coil", 4]],
+            "product": ["matrix_lab", 1]
+        },
+        {
+            "name": "Prism(棱镜)", "key_name": "prism", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["glass", 3]],
+            "product": ["prism", 2]
+        },
+        {
+            "name": "Plasma exciter(电浆激发器)", "key_name": "plasma_exciter", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["magnetic_coil", 4], ["prism", 2]],
+            "product": ["plasma_exciter", 1]
+        },
+        {
+            "name": "Wireless power tower(无线输电塔)", "key_name": "wireless_power_tower", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["tesla_tower", 1], ["plasma_exciter", 3]],
+            "product": ["wireless_power_tower", 1]
+        },
+        {
+            "name": "Oil extractor(原油萃取站)", "key_name": "oil_extractor", "category": "crafting1",
+            "time": 8,
+            "ingredients": [["steel", 12], ["stone", 12], ["circuit_board", 6], ["plasma_exciter", 4]],
+            "product": ["oil_extractor", 1]
+        },
+        {
+            "name": "Oil refinery(原油精炼厂)", "key_name": "oil_refinery", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["steel", 10], ["stone", 10], ["circuit_board", 6], ["plasma_exciter", 6]],
+            "product": ["oil_refinery", 1]
+        },
+        {
+            "name": "Hydrogen(氢)", "key_name": "hydrogen+refined_oil1", "category": "oil_refinery",
+            "time": 4,
+            "ingredients": [["crude_oil", 2]],
+            "product": ["hydrogen", 1]
+        },
+        {
+            "name": "Refined oil(精炼油)", "key_name": "hydrogen+refined_oil2", "category": "oil_refinery",
+            "time": 4,
+            "ingredients": [["crude_oil", 2]],
+            "product": ["refined_oil", 2]
+        },
+        {
+            "name": "Energetic graphite(高能石墨)", "key_name": "energetic_graphite", "category": "smelting1",
+            "time": 2,
+            "ingredients": [["coal_ore", 2]],
+            "product": ["energetic_graphite", 1]
+        },
+        {
+            "name": "Energy matrix(能量矩阵)", "key_name": "energy_matrix", "category": "matrix_lab",
+            "time": 6,
+            "ingredients": [["energetic_graphite", 2], ["hydrogen", 2]],
+            "product": ["energy_matrix", 1]
+        },
+        {
+            "name": "Hydrogen fuel rod(液氢燃料棒)", "key_name": "hydrogen_fuel_rod", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["titanium_ingot", 1], ["hydrogen", 5]],
+            "product": ["hydrogen_fuel_rod", 1]
+        },
+        {
+            "name": "Thruster(推进器)", "key_name": "thruster", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["steel", 2], ["copper_ingot", 3]],
+            "product": ["thruster", 1]
+        },
+        {
+            "name": "Reinforced thruster(加力推进器)", "key_name": "reinforced_thruster", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["titanium_alloy", 5], ["electromagnetic_turbine", 5]],
+            "product": ["reinforced_thruster", 1]
+        },
+        {
+            "name": "Chemical plant(化工厂)", "key_name": "chemical_plant", "category": "crafting1",
+            "time": 5,
+            "ingredients": [["steel", 8], ["stone", 8], ["glass", 8], ["circuit_board", 2]],
+            "product": ["chemical_plant", 1]
+        },
+        {
+            "name": "Plastic(塑料)", "key_name": "plastic", "category": "chemical_plant",
+            "time": 3,
+            "ingredients": [["refined_oil", 2], ["energetic_graphite", 1]],
+            "product": ["plastic", 1]
+        },
+        {
+            "name": "Sulfuric acid(硫酸)", "key_name": "sulfuric_acid", "category": "chemical_plant",
+            "time": 6,
+            "ingredients": [["refined_oil", 6], ["stone_ore", 8], ["water", 4]],
+            "product": ["sulfuric_acid", 4]
+        },
+        {
+            "name": "Organic crystal(有机晶体)", "key_name": "organic_crystal", "category": "chemical_plant",
+            "time": 6,
+            "ingredients": [["plastic", 2], ["refined_oil", 1], ["water", 1]],
+            "product": ["organic_crystal", 1]
+        },
+        {
+            "name": "Titanium crystal(钛水晶)", "key_name": "titanium_crystal", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["organic_crystal", 1], ["titanium_ingot", 3]],
+            "product": ["titanium_crystal", 1]
+        },
+        {
+            "name": "Structure matrix(结构矩阵)", "key_name": "structure_matrix", "category": "matrix_lab",
+            "time": 8,
+            "ingredients": [["diamond", 1], ["titanium_crystal", 1]],
+            "product": ["structure_matrix", 1]
+        },
+        {
+            "name": "Casimir crystal(卡西米尔水晶)", "key_name": "casimir_crystal", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["titanium_crystal", 1], ["graphene", 2], ["hydrogen", 12]],
+            "product": ["casimir_crystal", 1]
+        },
+        {
+            "name": "Casimir crystal(卡西米尔水晶)", "key_name": "casimir_crystal", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["optical_grating_crystal", 6], ["graphene", 2], ["hydrogen", 12]],
+            "product": ["casimir_crystal", 1]
+        },
+        {
+            "name": "Titanium glass(钛玻璃)", "key_name": "titanium_glass", "category": "crafting1",
+            "time": 5,
+            "ingredients": [["glass", 2], ["titanium_ingot", 2], ["water", 2]],
+            "product": ["titanium_glass", 2]
+        },
+        {
+            "name": "Graphene(石墨烯)", "key_name": "graphene", "category": "chemical_plant",
+            "time": 3,
+            "ingredients": [["energetic_graphite", 3], ["sulfuric_acid", 1]],
+            "product": ["graphene", 2]
+        },
+        {
+            "name": "Graphene(石墨烯)", "key_name": "graphene+hydrogen1", "category": "chemical_plant",
+            "time": 2,
+            "ingredients": [["fire_ice", 2]],
+            "product": ["graphene", 2]
+        },
+        {
+            "name": "Hydrogen(氢)", "key_name": "graphene+hydrogen2", "category": "chemical_plant",
+            "time": 2,
+            "ingredients": [["fire_ice", 2]],
+            "product": ["hydrogen", 1]
+        },
+        {
+            "name": "Carbon nanotube(碳纳米管)", "key_name": "carbon_nanotube", "category": "chemical_plant",
+            "time": 4,
+            "ingredients": [["graphene", 3], ["titanium_ingot", 1]],
+            "product": ["carbon_nanotube", 2]
+        },
+        {
+            "name": "Silicon ore(硅石)", "key_name": "silicon_ore", "category": "smelting1",
+            "time": 10,
+            "ingredients": [["stone_ore", 10]],
+            "product": ["silicon_ore", 1]
+        },
+        {
+            "name": "Carbon nanotube(碳纳米管)", "key_name": "carbon_nanotube", "category": "chemical_plant",
+            "time": 4,
+            "ingredients": [["spiniform_stalagmite_crystal", 2]],
+            "product": ["carbon_nanotube", 2]
+        },
+        {
+            "name": "Particle broadband(粒子宽带)", "key_name": "particle_broadband", "category": "crafting1",
+            "time": 8,
+            "ingredients": [["carbon_nanotube", 2], ["crystal_silicon", 2], ["plastic", 1]],
+            "product": ["particle_broadband", 1]
+        },
+        {
+            "name": "Crystal silicon(晶格硅)", "key_name": "crystal_silicon", "category": "smelting1",
+            "time": 2,
+            "ingredients": [["high-purity_silicon", 1]],
+            "product": ["crystal_silicon", 1]
+        },
+        {
+            "name": "Plane filter(滤波器)", "key_name": "plane_filter", "category": "crafting1",
+            "time": 12,
+            "ingredients": [["casimir_crystal", 1], ["titanium_glass", 2]],
+            "product": ["plane_filter", 1]
+        },
+        {
+            "name": "Miniature particle collider(微型粒子对撞机)", "key_name": "miniature_particle_collider", "category": "crafting1",
+            "time": 15,
+            "ingredients": [["titanium_alloy", 20], ["frame_material", 20], ["super-magnetic_ring", 50], ["graphene", 10], ["processor", 8]],
+            "product": ["miniature_particle_collider", 1]
+        },
+        {
+            "name": "Deuterium(氘)", "key_name": "deuterium", "category": "crafting1",
+            "time": 5,
+            "ingredients": [["hydrogen", 10]],
+            "product": ["deuterium", 5]
+        },
+        {
+            "name": "Deuteron fuel rod(氘核燃料棒)", "key_name": "deuteron_fuel_rod", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["titanium_alloy", 1], ["deuterium", 10], ["super-magnetic_ring", 1]],
+            "product": ["deuteron_fuel_rod", 1]
+        },
+        {
+            "name": "Annihilation constraint sphere(湮灭约束球)", "key_name": "annihilation_constraint_sphere", "category": "crafting1",
+            "time": 20,
+            "ingredients": [["particle_container", 1], ["processor", 1]],
+            "product": ["annihilation_constraint_sphere", 1]
+        },
+        {
+            "name": "Artificial star(人造恒星)", "key_name": "artificial_star", "category": "crafting1",
+            "time": 30,
+            "ingredients": [["titanium_alloy", 20], ["frame_material", 20], ["annihilation_constraint_sphere", 10], ["quantum_chip", 10]],
+            "product": ["artificial_star", 1]
+        },
+        {
+            "name": "Antimatter fuel rod(反物质燃料棒)", "key_name": "antimatter_fuel_rod", "category": "crafting1",
+            "time": 12,
+            "ingredients": [["antimatter", 10], ["hydrogen", 10], ["annihilation_constraint_sphere", 1], ["titanium_alloy", 1]],
+            "product": ["antimatter_fuel_rod", 1]
+        },
+        {
+            "name": "Assembling machine Mk.I(制造台 Mk.I)", "key_name": "assembling_machine_mk_i", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["iron_ingot", 4], ["gear", 8], ["circuit_board", 4]],
+            "product": ["assembling_machine_mk_i", 1]
+        },
+        {
+            "name": "Assembling machine Mk.II(制造台 Mk.II)", "key_name": "assembling_machine_mk_ii", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["assembling_machine_mk_i", 1], ["graphene", 8], ["processor", 4]],
+            "product": ["assembling_machine_mk_ii", 1]
+        },
+        {
+            "name": "Assembling machine Mk.III(制造台 Mk.III)", "key_name": "assembling_machine_mk_iii", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["assembling_machine_mk_ii", 1], ["particle_broadband", 8], ["quantum_chip", 2]],
+            "product": ["assembling_machine_mk_iii", 1]
+        },
+        {
+            "name": "Mining machine(采矿机)", "key_name": "mining_machine", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["iron_ingot", 4], ["circuit_board", 2], ["magnetic_coil", 2], ["gear", 2]],
+            "product": ["mining_machine", 1]
+        },
+        {
+            "name": "Water pump(抽水站)", "key_name": "water_pump", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["iron_ingot", 8], ["stone", 4], ["electric_motor", 4], ["circuit_board", 2]],
+            "product": ["water_pump", 1]
+        },
+        {
+            "name": "Circuit board(电路板)", "key_name": "circuit_board", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["iron_ingot", 2], ["copper_ingot", 1]],
+            "product": ["circuit_board", 2]
+        },
+        {
+            "name": "Processor(处理器)", "key_name": "processor", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["circuit_board", 2], ["microcrystalline_component", 2]],
+            "product": ["processor", 1]
+        },
+        {
+            "name": "Quantum chip(量子芯片)", "key_name": "quantum_chip", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["processor", 2], ["plane_filter", 2]],
+            "product": ["quantum_chip", 1]
+        },
+        {
+            "name": "Microcrystalline component(微晶元件)", "key_name": "microcrystalline_component", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["high-purity_silicon", 2], ["copper_ingot", 1]],
+            "product": ["microcrystalline_component", 1]
+        },
+        {
+            "name": "Organic crystal(有机晶体)", "key_name": "organic_crystal", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["log", 20], ["plant_fuel", 30], ["water", 10]],
+            "product": ["organic_crystal", 1]
+        },
+        {
+            "name": "Information matrix(信息矩阵)", "key_name": "information_matrix", "category": "matrix_lab",
+            "time": 10,
+            "ingredients": [["processor", 2], ["particle_broadband", 1]],
+            "product": ["information_matrix", 1]
+        },
+        {
+            "name": "Smelter(电弧熔炉)", "key_name": "smelter", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["iron_ingot", 4], ["stone", 2], ["circuit_board", 4], ["magnetic_coil", 2]],
+            "product": ["smelter", 1]
+        },
+        {
+            "name": "Glass(玻璃)", "key_name": "glass", "category": "smelting1",
+            "time": 2,
+            "ingredients": [["stone_ore", 2]],
+            "product": ["glass", 1]
+        },
+        {
+            "name": "Hydrogen(氢)", "key_name": "hydrogen+energetic_graphite1", "category": "oil_refinery",
+            "time": 4,
+            "ingredients": [["refined_oil", 1]],
+            "product": ["hydrogen", 1]
+        },
+        {
+            "name": "Energetic graphite(高能石墨)", "key_name": "hydrogen+energetic_graphite2", "category": "oil_refinery",
+            "time": 4,
+            "ingredients": [["refined_oil", 1]],
+            "product": ["energetic_graphite", 1]
+        },
+        {
+            "name": "High-purity silicon(高纯硅块)", "key_name": "high-purity_silicon", "category": "smelting1",
+            "time": 2,
+            "ingredients": [["silicon_ore", 2]],
+            "product": ["high-purity_silicon", 1]
+        },
+        {
+            "name": "Diamond(金刚石)", "key_name": "diamond", "category": "smelting1",
+            "time": 2,
+            "ingredients": [["energetic_graphite", 1]],
+            "product": ["diamond", 1]
+        },
+        {
+            "name": "Diamond(金刚石)", "key_name": "diamond", "category": "smelting1",
+            "time": 2,
+            "ingredients": [["kimberlite_ore", 1]],
+            "product": ["diamond", 1]
+        },
+        {
+            "name": "Crystal silicon(晶格硅)", "key_name": "crystal_silicon", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["fractal_silicon", 1]],
+            "product": ["crystal_silicon", 1]
+        },
+        {
+            "name": "Steel(钢材)", "key_name": "steel", "category": "smelting1",
+            "time": 3,
+            "ingredients": [["iron_ingot", 3]],
+            "product": ["steel", 1]
+        },
+        {
+            "name": "Thermal power station(火力发电厂)", "key_name": "thermal_power_station", "category": "crafting1",
+            "time": 5,
+            "ingredients": [["iron_ingot", 10], ["stone", 4], ["gear", 4], ["magnetic_coil", 4]],
+            "product": ["thermal_power_station", 1]
+        },
+        {
+            "name": "Titanium ingot(钛块)", "key_name": "titanium_ingot", "category": "smelting1",
+            "time": 2,
+            "ingredients": [["titanium_ore", 2]],
+            "product": ["titanium_ingot", 1]
+        },
+        {
+            "name": "Titanium alloy(钛合金)", "key_name": "titanium_alloy", "category": "smelting1",
+            "time": 12,
+            "ingredients": [["titanium_ingot", 4], ["steel", 4], ["sulfuric_acid", 8]],
+            "product": ["titanium_alloy", 4]
+        },
+        {
+            "name": "Solar panel(太阳能板)", "key_name": "solar_panel", "category": "crafting1",
+            "time": 5,
+            "ingredients": [["copper_ingot", 6], ["high-purity_silicon", 6], ["circuit_board", 4]],
+            "product": ["solar_panel", 1]
+        },
+        {
+            "name": "Photon combiner(光子合成器)", "key_name": "photon_combiner", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["prism", 2], ["circuit_board", 1]],
+            "product": ["photon_combiner", 1]
+        },
+        {
+            "name": "Photon combiner(光子合成器)", "key_name": "photon_combiner", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["optical_grating_crystal", 1], ["circuit_board", 1]],
+            "product": ["photon_combiner", 1]
+        },
+        {
+            "name": "Solar sail(太阳帆)", "key_name": "solar_sail", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["graphene", 1], ["photon_combiner", 1]],
+            "product": ["solar_sail", 2]
+        },
+        {
+            "name": "EM-Rail Ejector(电磁轨道弹出器)", "key_name": "em-rail_ejector", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["steel", 20], ["gear", 20], ["processor", 5], ["super-magnetic_ring", 10]],
+            "product": ["em-rail_ejector", 1]
+        },
+        {
+            "name": "Ray receiver(射线接收站)", "key_name": "ray_receiver", "category": "crafting1",
+            "time": 8,
+            "ingredients": [["steel", 20], ["high-purity_silicon", 20], ["photon_combiner", 10], ["processor", 5], ["super-magnetic_ring", 20]],
+            "product": ["ray_receiver", 1]
+        },
+        {
+            "name": "Satellite substation(卫星变电站)", "key_name": "satellite_substation", "category": "crafting1",
+            "time": 5,
+            "ingredients": [["wireless_power_tower", 1], ["super-magnetic_ring", 10], ["frame_material", 2]],
+            "product": ["satellite_substation", 1]
+        },
+        {
+            "name": "Antimatter(反物质)", "key_name": "antimatter+hydrogen1", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["critical_photon", 2]],
+            "product": ["antimatter", 2]
+        },
+        {
+            "name": "Hydrogen(氢)", "key_name": "antimatter+hydrogen2", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["critical_photon", 2]],
+            "product": ["hydrogen", 2]
+        },
+        {
+            "name": "Universe matrix(宇宙矩阵)", "key_name": "universe_matrix", "category": "matrix_lab",
+            "time": 15,
+            "ingredients": [["electromagnetic_matrix", 1], ["energy_matrix", 1], ["structure_matrix", 1], ["information_matrix", 1], ["gravity_matrix", 1], ["antimatter", 1]],
+            "product": ["universe_matrix", 1]
+        },
+        {
+            "name": "Accumulator(蓄电器)", "key_name": "accumulator", "category": "crafting1",
+            "time": 5,
+            "ingredients": [["iron_ingot", 6], ["super-magnetic_ring", 6], ["crystal_silicon", 4]],
+            "product": ["accumulator", 1]
+        },
+        {
+            "name": "Energy exchanger(能量枢纽)", "key_name": "energy_exchanger", "category": "crafting1",
+            "time": 15,
+            "ingredients": [["titanium_alloy", 40], ["steel", 40], ["processor", 40], ["particle_container", 8]],
+            "product": ["energy_exchanger", 1]
+        },
+        {
+            "name": "Space warper(空间折跃)", "key_name": "space_warper", "category": "crafting1",
+            "time": 10,
+            "ingredients": [["graviton_lens", 1]],
+            "product": ["space_warper", 1]
+        },
+        {
+            "name": "Space warper(空间折跃)", "key_name": "space_warper", "category": "crafting1",
+            "time": 10,
+            "ingredients": [["gravity_matrix", 1]],
+            "product": ["space_warper", 8]
+        },
+        {
+            "name": "Frame material(框架)", "key_name": "frame_material", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["carbon_nanotube", 4], ["titanium_alloy", 1], ["high-purity_silicon", 1]],
+            "product": ["frame_material", 1]
+        },
+        {
+            "name": "Dyson sphere component(戴森球组件)", "key_name": "dyson_sphere_component", "category": "crafting1",
+            "time": 8,
+            "ingredients": [["frame_material", 3], ["solar_sail", 3], ["processor", 3]],
+            "product": ["dyson_sphere_component", 1]
+        },
+        {
+            "name": "Vertical launching silo(垂直发射井)", "key_name": "vertical_launching_silo", "category": "crafting1",
+            "time": 30,
+            "ingredients": [["titanium_alloy", 80], ["frame_material", 30], ["graviton_lens", 20], ["quantum_chip", 10]],
+            "product": ["vertical_launching_silo", 1]
+        },
+        {
+            "name": "Small carrier rocket(小型运载火箭)", "key_name": "small_carrier_rocket", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["dyson_sphere_component", 2], ["deuteron_fuel_rod", 2], ["quantum_chip", 2]],
+            "product": ["small_carrier_rocket", 1]
+        },
+        {
+            "name": "Conveyor belt MK.I(传送带)", "key_name": "conveyor_belt_mk_i", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["iron_ingot", 2], ["gear", 1]],
+            "product": ["conveyor_belt_mk_i", 3]
+        },
+        {
+            "name": "Sorter MK.I(分拣器)", "key_name": "sorter_mk_i", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["iron_ingot", 1], ["circuit_board", 1]],
+            "product": ["sorter_mk_i", 1]
+        },
+        {
+            "name": "Storage MK.I(小型储物仓)", "key_name": "storage_mk_i", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["iron_ingot", 4], ["stone", 4]],
+            "product": ["storage_mk_i", 1]
+        },
+        {
+            "name": "Splitter(4-direction)(四向分流器)", "key_name": "splitter_4-direction", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["iron_ingot", 3], ["gear", 2], ["circuit_board", 1]],
+            "product": ["splitter_4-direction", 1]
+        },
+        {
+            "name": "Sorter MK.II(高速分拣器)", "key_name": "sorter_mk_ii", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["sorter_mk_i", 2], ["electric_motor", 1]],
+            "product": ["sorter_mk_ii", 2]
+        },
+        {
+            "name": "Conveyor belt MK.II(高速传送带)", "key_name": "conveyor_belt_mk_ii", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["conveyor_belt_mk_i", 3], ["electromagnetic_turbine", 1]],
+            "product": ["conveyor_belt_mk_ii", 3]
+        },
+        {
+            "name": "Sorter MK.III(极速分拣器)", "key_name": "sorter_mk_iii", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["sorter_mk_ii", 2], ["electromagnetic_turbine", 1]],
+            "product": ["sorter_mk_iii", 2]
+        },
+        {
+            "name": "Storage MK.II(大型储物仓)", "key_name": "storage_mk_ii", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["steel", 8], ["stone", 8]],
+            "product": ["storage_mk_ii", 1]
+        },
+        {
+            "name": "Conveyor belt MK.III(极速传送带)", "key_name": "conveyor_belt_mk_iii", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["conveyor_belt_mk_ii", 3], ["super-magnetic_ring", 1], ["graphene", 1]],
+            "product": ["conveyor_belt_mk_iii", 3]
+        },
+        {
+            "name": "Planetary Logistics Station(行星内物流运输站)", "key_name": "planetary_logistics_station", "category": "crafting1",
+            "time": 20,
+            "ingredients": [["steel", 40], ["titanium_ingot", 40], ["processor", 40], ["particle_container", 20]],
+            "product": ["planetary_logistics_station", 1]
+        },
+        {
+            "name": "Logistics drone(物流无人机)", "key_name": "logistics_drone", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["iron_ingot", 5], ["processor", 2], ["thruster", 2]],
+            "product": ["logistics_drone", 1]
+        },
+        {
+            "name": "Interstellar Logistics Station(星际物流运输站)", "key_name": "interstellar_logistics_station", "category": "crafting1",
+            "time": 30,
+            "ingredients": [["planetary_logistics_station", 1], ["titanium_alloy", 40], ["particle_container", 20]],
+            "product": ["interstellar_logistics_station", 1]
+        },
+        {
+            "name": "Logistics vessel(运输船)", "key_name": "logistics_vessel", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["titanium_alloy", 10], ["processor", 10], ["reinforced_thruster", 2]],
+            "product": ["logistics_vessel", 1]
+        },
+        {
+            "name": "Electric motor(电动机)", "key_name": "electric_motor", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["iron_ingot", 2], ["gear", 1], ["magnetic_coil", 1]],
+            "product": ["electric_motor", 1]
+        },
+        {
+            "name": "Electromagnetic turbine(电磁涡轮)", "key_name": "electromagnetic_turbine", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["electric_motor", 2], ["magnetic_coil", 2]],
+            "product": ["electromagnetic_turbine", 1]
+        },
+        {
+            "name": "Particle container(粒子容器)", "key_name": "particle_container", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["electromagnetic_turbine", 2], ["copper_ingot", 2], ["graphene", 2]],
+            "product": ["particle_container", 1]
+        },
+        {
+            "name": "Particle container(粒子容器)", "key_name": "particle_container", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["unipolar_magnet", 10], ["copper_ingot", 2]],
+            "product": ["particle_container", 1]
+        },
+        {
+            "name": "Graviton lens(引力透镜)", "key_name": "graviton_lens", "category": "crafting1",
+            "time": 6,
+            "ingredients": [["diamond", 4], ["strange_matter", 1]],
+            "product": ["graviton_lens", 1]
+        },
+        {
+            "name": "Gravity matrix(引力矩阵)", "key_name": "gravity_matrix", "category": "matrix_lab",
+            "time": 24,
+            "ingredients": [["graviton_lens", 1], ["quantum_chip", 1]],
+            "product": ["gravity_matrix", 2]
+        },
+        {
+            "name": "Super-magnetic ring(超磁环)", "key_name": "super-magnetic_ring", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["electromagnetic_turbine", 2], ["magnet", 3], ["energetic_graphite", 1]],
+            "product": ["super-magnetic_ring", 1]
+        },
+        {
+            "name": "Strange matter(奇异物质)", "key_name": "strange_matter", "category": "crafting1",
+            "time": 8,
+            "ingredients": [["particle_container", 2], ["iron_ingot", 2], ["deuterium", 10]],
+            "product": ["strange_matter", 1]
+        },
+        {
+            "name": "Accelerant Mk.I(促进剂 Mk.I)", "key_name": "accelerant_mk_i", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["coal_ore", 2]],
+            "product": ["accelerant_mk_i", 1]
+        },
+        {
+            "name": "Accelerant Mk.II(促进剂 Mk.II)", "key_name": "accelerant_mk_ii", "category": "crafting1",
+            "time": 4,
+            "ingredients": [["organic_crystal", 2], ["accelerant_mk_i", 1]],
+            "product": ["accelerant_mk_ii", 1]
+        },
+        {
+            "name": "Accelerant Mk.III(促进剂Mk.III)", "key_name": "accelerant_mk_iii", "category": "crafting1",
+            "time": 8,
+            "ingredients": [["casimir_crystal", 3], ["accelerant_mk_ii", 1]],
+            "product": ["accelerant_mk_iii", 1]
+        },
+        {
+            "name": "Spray coater(喷涂机)", "key_name": "spray_coater", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["plasma_exciter", 1], ["circuit_board", 4], ["steel", 2]],
+            "product": ["spray_coater", 1]
+        },
+        {
+            "name": "Fractionator(分馏器)", "key_name": "fractionator", "category": "crafting1",
+            "time": 3,
+            "ingredients": [["steel", 8], ["stone", 4], ["glass", 4], ["processor", 1]],
+            "product": ["fractionator", 1]
+        },
+        {
+            "name": "Orbit collector(轨道采集器)", "key_name": "orbit_collector", "category": "crafting1",
+            "time": 30,
+            "ingredients": [["interstellar_logistics_station", 1], ["super-magnetic_ring", 50], ["reinforced_thruster", 20], ["accumulator_full", 20]],
+            "product": ["orbit_collector", 1]
+        },
+        {
+            "name": "Foundation(地基)", "key_name": "foundation", "category": "crafting1",
+            "time": 1,
+            "ingredients": [["stone", 3], ["steel", 1]],
+            "product": ["foundation", 1]
+        },
+        {
+            "name": "Mini fusion power station(微型聚变发电站)", "key_name": "mini_fusion_power_station", "category": "crafting1",
+            "time": 10,
+            "ingredients": [["titanium_alloy", 12], ["super-magnetic_ring", 10], ["carbon_nanotube", 8], ["processor", 4]],
+            "product": ["mini_fusion_power_station", 1]
+        },
+        {
+            "name": "Storage tank(储液罐)", "key_name": "storage_tank", "category": "crafting1",
+            "time": 2,
+            "ingredients": [["iron_ingot", 8], ["stone", 4], ["glass", 4]],
+            "product": ["storage_tank", 1]
+        },
+        {
+            "name": "Deuterium(氘)", "key_name": "deuterium", "category": "crafting1",
+            "time": 0.016666666666666666,
+            "ingredients": [["hydrogen", 200]],
+            "product": ["deuterium", 1]
+        }
+    ],
+    "resources": [
+    ]
+}
