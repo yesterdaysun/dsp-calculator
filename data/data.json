@@ -19,7 +19,7 @@
     "miners": [
         {"name": "Mining machine(采矿机)", "key_name": "miner-mk1", "category": "mineral", "base_rate": 180, "power": 420},
         {"name": "Oil extractor(原油萃取站)", "key_name": "oil_extractor", "category": "oil", "base_rate": 120, "power": 840},
-        {"name": "Water pump(抽水站)", "key_name": "water_pump", "category": "water", "base_rate": 120, "power": 300}
+        {"name": "Water pump(抽水站)", "key_name": "water_pump", "category": "water", "base_rate": 60, "power": 300}
     ],
     "items": [
         {"name": "Iron ore(铁矿)", "key_name": "iron_ore", "tier": 0, "stack_size": 100},
