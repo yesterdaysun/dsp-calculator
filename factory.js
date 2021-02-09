@@ -148,7 +148,15 @@ class FactorySpecification {
     }
 
     getOverclock(recipe) {
-        return this.overclock.get(recipe) || one
+        let oc = this.overclock.get(recipe)
+        if (oc) {
+            return oc
+        }
+        if (recipe.category === "crafting1") {
+            return spec.assembler.rate
+        } else {
+            return one
+        }
     }
 
     setOverclock(recipe, overclock) {

@@ -36,14 +36,7 @@ class Recipe {
     }
     gives(item) {
         if (this.product.item === item) {
-            let assemblerRate = Rational.from_float(1.0)
-            if (this.category === "crafting1") {
-                if (this.category === "crafting1") {
-                    assemblerRate = spec.assembler.rate
-                }
-                assemblerRate = spec.assembler.rate
-            }
-            return this.product.amount.mul(assemblerRate)
+            return this.product.amount
         }
         return null
     }
