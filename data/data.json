@@ -14,7 +14,9 @@
         {"name": "Smelter(电弧熔炉)", "key_name": "foundry", "category": "smelting1", "power": 360, "max": 4},
         {"name": "Matrix lab(矩阵实验室)", "key_name": "matrix_lab", "category": "matrix_lab", "power": 480, "max": 4},
         {"name": "Chemical plant(化工厂)", "key_name": "chemical_plant", "category": "chemical_plant", "power": 720, "max": 4},
-        {"name": "Oil refinery(原油精炼厂)", "key_name": "oil_refinery", "category": "oil_refinery", "power": 960, "max": 4}
+        {"name": "Oil refinery(原油精炼厂)", "key_name": "oil_refinery", "category": "oil_refinery", "power": 960, "max": 4},
+        {"name": "Fractionator(分馏器)", "key_name": "fractionator", "category": "fractionator", "power": 720, "max": 4},
+        {"name": "Miniature particle collider(微型粒子对撞机)", "key_name": "miniature_particle_collider", "category": "miniature_particle_collider", "power": 12000, "max": 4}
     ],
     "miners": [
         {"name": "Mining machine(采矿机)", "key_name": "miner-mk1", "category": "mineral", "base_rate": 180, "power": 420},
@@ -393,7 +395,7 @@
             "product": ["miniature_particle_collider", 1]
         },
         {
-            "name": "Deuterium(氘)", "key_name": "deuterium", "category": "crafting1",
+            "name": "Deuterium(氘)", "key_name": "deuterium", "category": "miniature_particle_collider",
             "time": 5,
             "ingredients": [["hydrogen", 10]],
             "product": ["deuterium", 5]
@@ -603,13 +605,13 @@
             "product": ["satellite_substation", 1]
         },
         {
-            "name": "Antimatter(反物质)", "key_name": "antimatter+hydrogen1", "category": "crafting1",
+            "name": "Antimatter(反物质)", "key_name": "antimatter+hydrogen1", "category": "miniature_particle_collider",
             "time": 2,
             "ingredients": [["critical_photon", 2]],
             "product": ["antimatter", 2]
         },
         {
-            "name": "Hydrogen(氢)", "key_name": "antimatter+hydrogen2", "category": "crafting1",
+            "name": "Hydrogen(氢)", "key_name": "antimatter+hydrogen2", "category": "miniature_particle_collider",
             "time": 2,
             "ingredients": [["critical_photon", 2]],
             "product": ["hydrogen", 2]
@@ -789,7 +791,7 @@
             "product": ["super-magnetic_ring", 1]
         },
         {
-            "name": "Strange matter(奇异物质)", "key_name": "strange_matter", "category": "crafting1",
+            "name": "Strange matter(奇异物质)", "key_name": "strange_matter", "category": "miniature_particle_collider",
             "time": 8,
             "ingredients": [["particle_container", 2], ["iron_ingot", 2], ["deuterium", 10]],
             "product": ["strange_matter", 1]
@@ -849,10 +851,10 @@
             "product": ["storage_tank", 1]
         },
         {
-            "name": "Deuterium(氘)", "key_name": "deuterium", "category": "crafting1",
-            "time": 0.016666666666666666,
-            "ingredients": [["hydrogen", 200]],
-            "product": ["deuterium", 1]
+            "name": "Deuterium(氘)", "key_name": "deuterium", "category": "fractionator",
+            "time": 1,
+            "ingredients": [["hydrogen", 30]],
+            "product": ["deuterium", 0.3]
         }
     ],
     "resources": [
