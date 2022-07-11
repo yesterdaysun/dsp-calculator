@@ -98,12 +98,14 @@ limitations under the License.-->
 
         <tr class="setting-row">
             <td class="setting-label">Rate precision:</td>
-            <td><input id="rprec" class="prec" type="number" value="3" min="0" onchange="handlers.changeRatePrecision(event)"></td>
+            <td><input id="rprec" class="prec" type="number" value="3" min="0"
+                       onchange="handlers.changeRatePrecision(event)"></td>
         </tr>
 
         <tr class="setting-row">
             <td class="setting-label">Count precision:</td>
-            <td><input id="cprec" class="prec" type="number" value="1" min="0" onchange="handlers.changeCountPrecision(event)"></td>
+            <td><input id="cprec" class="prec" type="number" value="1" min="0"
+                       onchange="handlers.changeCountPrecision(event)"></td>
         </tr>
 
         <tr class="setting-section">
@@ -122,6 +124,11 @@ limitations under the License.-->
             <td><span id="assembler_selector"></span></td>
         </tr>
 
+        <tr class="setting-row">
+            <td class="setting-label">Smelting:</td>
+            <td><span id="smelting_selector"></span></td>
+        </tr>
+
         <tr class="setting-section">
             <td colspan="2"><span>Recipes</span>
                 <hr>
@@ -134,36 +141,15 @@ limitations under the License.-->
             </td>
         </tr>
 
-        <tr class="setting-section">
-            <td colspan="2"><span>Resources</span>
-                <hr>
-            </td>
-        </tr>
-
-        <tr>
-            <!--<td class="setting-label"></td>-->
-            <td colspan="2">
-                <div id="resource_settings"></div>
-            </td>
-        </tr>
-
     </table>
 </div>
 
 <div id="about_tab" class="tab">
     <div class="about-content">
-        This calculator is copyright 2019 Kirk McDonald. It is licensed under the Apache License 2.0, and its source may be <a
-            href="https://github.com/KirkMcDonald/satisfactory-calculator">found on github, here</a>.
         <p>
-            This calculator is based on my <a href="https://kirkmcdonald.github.io/calc.html">Factorio calculator</a>, and was created primarily to see what the project would look
-            like if rewritten from scratch, applying lessons learned over the years spent developing the original.
-        <p>
-            Satisfactory is a simpler game for which to calculate ratios than Factorio. This simplicity means that it is easier for this calculator to support certain features that
-            would be very difficult to add to the Factorio calculator, but which I have wanted to implement for a long time. This can be seen in the use of a <a
-                href="https://en.wikipedia.org/wiki/Sankey_diagram">Sankey diagram</a> in the visualizer, among other things.
-        <p>
-            If you wish to support the calculator, please consider donating to <a href="https://www.patreon.com/kirkmcdonald">my Patreon campaign</a>. Any amount helps. And thank
-            you!
+            This calculator is based on my <a href="https://github.com/yesterdaysun/dsp-calculator">dsp-calculator</a>
+            but redesigned to fix some of the faults of the original design
+            Source can be found <a href="https://github.com/xX13ENXx/dsp-calculator">Here</a>
     </div>
 </div>
 </body>

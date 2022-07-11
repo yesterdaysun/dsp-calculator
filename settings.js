@@ -14,7 +14,7 @@ limitations under the License.*/
 import {DEFAULT_RATE, DEFAULT_RATE_PRECISION, DEFAULT_COUNT_PRECISION, longRateNames} from "./align.js"
 import {dropdown} from "./dropdown.js"
 import {DEFAULT_TAB, clickTab} from "./events.js"
-import {spec, resourcePurities, DEFAULT_BELT, DEFAULT_ASSEMBLER} from "./factory.js"
+import {spec, resourcePurities, DEFAULT_BELT, DEFAULT_ASSEMBLER, DEFAULT_SMELTER} from "./factory.js"
 import {Rational} from "./rational.js"
 
 // There are several things going on with this control flow. Settings should
@@ -192,6 +192,8 @@ function assemblerHandler(assembler) {
     spec.updateSolution()
 }
 
+
+
 function renderAssemblers(settings) {
     let assemblerKey = DEFAULT_ASSEMBLER
     if (settings.has("assembler")) {
@@ -217,6 +219,46 @@ function renderAssemblers(settings) {
         .on("change", assemblerHandler)
     assemblerOption.append("label")
         .attr("for", d => "assembler." + d.key)
+        .append("img")
+        .classed("icon", true)
+        .attr("src", d => d.iconPath())
+        .attr("width", 32)
+        .attr("height", 32)
+        .attr("title", d => d.name)
+}
+
+// smelters
+
+function smelterHandler(smelter) {
+    spec.smelter = smelter
+    spec.updateSolution()
+}
+
+function renderSmelters(settings) {
+    let smelterKey = DEFAULT_SMELTER
+    if (settings.has("smelter")) {
+        smelterKey = settings.get("smelter")
+    }
+    spec.smelter = spec.smelters.get(smelterKey)
+
+    let smelters = []
+    for (let [smelterKey, smelter] of spec.smelters) {
+        smelters.push(smelter)
+    }
+    let form = d3.select("#smelting_selector")
+    form.selectAll("*").remove()
+    let smelterOption = form.selectAll("span")
+        .data(smelters)
+        .join("span")
+    smelterOption.append("input")
+        .attr("id", d => "smelter." + d.key)
+        .attr("type", "radio")
+        .attr("name", "smelter")
+        .attr("value", d => d.key)
+        .attr("checked", d => d === spec.smelter ? "" : null)
+        .on("change", smelterHandler)
+    smelterOption.append("label")
+        .attr("for", d => "smelter." + d.key)
         .append("img")
         .classed("icon", true)
         .attr("src", d => d.iconPath())
@@ -298,93 +340,6 @@ function mineHandler(d) {
     spec.updateSolution()
 }
 
-function renderResources(settings) {
-    spec.initMinerSettings()
-    if (settings.has("miners")) {
-        let miners = settings.get("miners").split(",")
-        for (let minerString of miners) {
-            let [recipeKey, minerKey, purityKey] = minerString.split(":")
-            let recipe = spec.recipes.get(recipeKey)
-            let miner = spec.miners.get(minerKey)
-            let purity = resourcePurities[Number(purityKey)]
-            spec.setMiner(recipe, miner, purity)
-        }
-    }
-
-    let div = d3.select("#resource_settings")
-    div.selectAll("*").remove()
-    let resources = []
-    for (let [recipe, {miner, purity}] of spec.minerSettings) {
-        let minerDefs = spec.buildings.get(recipe.category)
-        let purities = []
-        for (let purityDef of resourcePurities) {
-            let miners = []
-            for (let minerDef of spec.buildings.get(recipe.category)) {
-                let selected = miner === minerDef && purity === purityDef
-                miners.push({
-                    recipe: recipe,
-                    purity: purityDef,
-                    miner: minerDef,
-                    selected: selected,
-                    id: `miner.${recipe.key}.${purityDef.key}.${minerDef.key}`
-                })
-            }
-            purities.push({miners, purityDef})
-        }
-        resources.push({recipe, purities, minerDefs})
-    }
-    let resourceTable = div.selectAll("table")
-        .data(resources)
-        .join("table")
-        .classed("resource", true)
-    let header = resourceTable.append("tr")
-    header.append("th")
-        .append("img")
-        .classed("icon", true)
-        .attr("src", d => d.recipe.iconPath())
-        .attr("width", 32)
-        .attr("height", 32)
-        .attr("title", d => d.recipe.name)
-    header.selectAll("th")
-        .filter((d, i) => i > 0)
-        .data(d => d.minerDefs)
-        .join("th")
-        .append("img")
-        .classed("icon", true)
-        .attr("src", d => d.iconPath())
-        .attr("width", 32)
-        .attr("height", 32)
-        .attr("title", d => d.name)
-    let purityRow = resourceTable.selectAll("tr")
-        .filter((d, i) => i > 0)
-        .data(d => d.purities)
-        .join("tr")
-    purityRow.append("td")
-        .text(d => d.purityDef.name)
-    let cell = purityRow.selectAll("td")
-        .filter((d, i) => i > 0)
-        .data(d => d.miners)
-        .join("td")
-    cell.append("input")
-        .attr("id", d => d.id)
-        .attr("type", "radio")
-        .attr("name", d => d.recipe.key)
-        .attr("checked", d => d.selected ? "" : null)
-        .on("change", mineHandler)
-    cell.append("label")
-        .attr("for", d => d.id)
-        .append("svg")
-        .attr("viewBox", "0,0,32,32")
-        .style("width", 32)
-        .style("height", 32)
-        .append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", 32)
-        .attr("height", 32)
-        .attr("rx", 4)
-        .attr("ry", 4)
-}
 
 export function renderSettings(settings) {
     renderTargets(settings)
@@ -394,7 +349,7 @@ export function renderSettings(settings) {
     renderPrecisions(settings)
     renderBelts(settings)
     renderAssemblers(settings)
+    renderSmelters(settings)
     renderAltRecipes(settings)
-    renderResources(settings)
     renderTab(settings)
 }

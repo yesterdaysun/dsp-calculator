@@ -19,6 +19,7 @@ import {getItems} from "./item.js"
 import {getRecipes} from "./recipe.js"
 import {renderSettings} from "./settings.js"
 import {getAssemblers} from "./assembler.js";
+import {getSmelters} from "./smelter.js";
 
 function loadData(settings) {
     d3.json("data/data.json").then(function (data) {
@@ -27,7 +28,8 @@ function loadData(settings) {
         let buildings = getBuildings(data)
         let belts = getBelts(data)
         let assemblers = getAssemblers(data)
-        spec.setData(items, recipes, buildings, belts, assemblers)
+        let smelters = getSmelters(data)
+        spec.setData(items, recipes, buildings, belts, assemblers, smelters)
 
         renderSettings(settings)
 

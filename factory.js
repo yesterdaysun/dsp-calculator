@@ -33,6 +33,7 @@ export let DEFAULT_PURITY = resourcePurities[1]
 
 export let DEFAULT_BELT = "belt1"
 export let DEFAULT_ASSEMBLER = "assembler1"
+export let DEFAULT_SMELTER = "smelter1"
 
 class FactorySpecification {
     constructor() {
@@ -42,6 +43,7 @@ class FactorySpecification {
         this.buildings = null
         this.belts = null
         this.assemblers = null
+        this.smelters = null
 
         this.itemTiers = []
 
@@ -58,14 +60,17 @@ class FactorySpecification {
         this.altRecipes = new Map()
 
         this.belt = null
-        this.assembler = null
 
+
+        this.assembler = null
+        this.smelter = null
         this.ignore = new Set()
+
 
         this.format = new Formatter()
     }
 
-    setData(items, recipes, buildings, belts, assemblers) {
+    setData(items, recipes, buildings, belts, assemblers,smelters) {
         this.items = items
         let tierMap = new Map()
         for (let [itemKey, item] of items) {
@@ -97,7 +102,9 @@ class FactorySpecification {
         this.belts = belts
         this.belt = belts.get(DEFAULT_BELT)
         this.assemblers = assemblers
-        this.assembler = belts.get(DEFAULT_ASSEMBLER)
+        this.smelters = smelters
+        this.assembler = assemblers.get(DEFAULT_ASSEMBLER)
+        this.smelter = smelters.get(DEFAULT_SMELTER)
         this.initMinerSettings()
         // this.initOverclockSettings()
     }
@@ -135,25 +142,43 @@ class FactorySpecification {
         }
     }
 
+
+    checkBuilding(category, searchKey, recipe){
+        console.log(recipe.category)
+        let buildings = this.buildings.get(recipe.category);
+        for (let index in buildings) {
+            console.log(buildings[index])
+            console.log("Search Key: " + searchKey)
+            if (buildings[index].key === searchKey) {
+                return buildings[index];
+            }
+        }
+        console.log("Not Found")
+        return this.buildings.get(recipe.category)[0]
+    }
+
     getBuilding(recipe) {
         if (recipe.category === null) {
             return null
         } else if (this.minerSettings.has(recipe)) {
             return this.minerSettings.get(recipe).miner
+        } else if (recipe.category === "crafting") {
+            return this.checkBuilding("crafting",this.assembler.key,recipe);
+        } else if (recipe.category === "smelting") {
+            return this.checkBuilding("smelting",this.smelter.key,recipe);
         } else {
-            // NOTE: Only miners offer alternative buildings. May need to
-            // revisit this if higher tiers of constructors are added.
-            return this.buildings.get(recipe.category)[0]
+            return this.buildings.get(recipe.category)[0];
         }
     }
+
+
+
+
 
     getOverclock(recipe) {
         let oc = this.overclock.get(recipe)
         if (oc) {
             return oc
-        }
-        if (recipe.category === "crafting1") {
-            return spec.assembler.rate
         } else {
             return one
         }
