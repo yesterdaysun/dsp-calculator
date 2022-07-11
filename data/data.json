@@ -11,7 +11,7 @@
     ],
     "smelters": [
         {"name": "Arc Smelter(电弧熔炉)", "key_name": "smelter1", "rate": 1},
-        {"name": "Plan Smelter", "key_name": "smelter2", "rate": 22}
+        {"name": "Plane Smelter", "key_name": "smelter2", "rate": 22}
     ],
     "buildings": [
         {"name": "Assembling machine Mk.I(制造台 Mk.I)", "key_name": "assembler1", "category": "crafting", "power": 270, "max": 4, "rate": 0.75},
@@ -19,7 +19,7 @@
         {"name": "Assembling machine Mk.III(制造台 Mk.III)", "key_name": "assembler3", "category": "crafting", "power": 270, "max": 4, "rate": 1.5},
 
         {"name": "Arc Smelter(电弧熔炉)", "key_name": "smelter1", "category": "smelting", "power": 360, "max": 4, "rate": 1},
-        {"name": "Plan Smelter", "key_name": "smelter2", "category": "smelting", "power": 360, "max": 4, "rate": 2},
+        {"name": "Plane Smelter", "key_name": "smelter2", "category": "smelting", "power": 360, "max": 4, "rate": 2},
 
         {"name": "Matrix lab(矩阵实验室)", "key_name": "matrix_lab", "category": "matrix_lab", "power": 480, "max": 4, "rate": 1},
         {"name": "Chemical plant(化工厂)", "key_name": "chemical_plant", "category": "chemical_plant", "power": 720, "max": 4, "rate": 1},
@@ -150,7 +150,8 @@
         {"name": "Assembling machine Mk.I(制造台 Mk.I)", "key_name": "assembling_machine_mk_i", "tier": 3, "stack_size": 50},
         {"name": "Assembling machine Mk.II(制造台 Mk.II)", "key_name": "assembling_machine_mk_ii", "tier": 3, "stack_size": 50},
         {"name": "Assembling machine Mk.III(制造台 Mk.III)", "key_name": "assembling_machine_mk_iii", "tier": 3, "stack_size": 50},
-        {"name": "Arc Smelter(电弧熔炉)", "key_name": "smelter", "tier": 3, "stack_size": 50},
+        {"name": "Arc Smelter(电弧熔炉)", "key_name": "smelter1", "tier": 3, "stack_size": 50},
+        {"name": "Plane Smelter", "key_name": "smelter2", "tier": 3, "stack_size": 50},
         {"name": "Spray coater(喷涂机)", "key_name": "spray_coater", "tier": 3, "stack_size": 20},
         {"name": "Chemical plant(化工厂)", "key_name": "chemical_plant", "tier": 3, "stack_size": 20},
         {"name": "Fractionator(分馏器)", "key_name": "fractionator", "tier": 3, "stack_size": 20}
@@ -499,10 +500,19 @@
             "product": ["information_matrix", 1]
         },
         {
-            "name": "Arc Smelter(电弧熔炉)", "key_name": "smelter", "category": "crafting",
+            "name": "Arc Smelter(电弧熔炉)", "key_name": "smelter1", "category": "crafting",
             "time": 3,
             "ingredients": [["iron_ingot", 4], ["stone", 2], ["circuit_board", 4], ["magnetic_coil", 2]],
-            "product": ["smelter", 1]
+            "product": ["smelter1", 1]
+        },
+        {
+            "name": "Plane Smelter", "key_name": "smelter2", "category": "crafting",
+            "time": 5,
+            "ingredients": [["smelter1", 1],
+                ["frame_material", 5],
+                ["plane_filter", 4],
+                ["unipolar_magnet", 15]],
+            "product": ["smelter2", 1]
         },
         {
             "name": "Glass(玻璃)", "key_name": "glass", "category": "smelting",
