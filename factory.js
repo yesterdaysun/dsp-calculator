@@ -144,16 +144,12 @@ class FactorySpecification {
 
 
     checkBuilding(category, searchKey, recipe){
-        console.log(recipe.category)
         let buildings = this.buildings.get(recipe.category);
         for (let index in buildings) {
-            console.log(buildings[index])
-            console.log("Search Key: " + searchKey)
             if (buildings[index].key === searchKey) {
                 return buildings[index];
             }
         }
-        console.log("Not Found")
         return this.buildings.get(recipe.category)[0]
     }
 
