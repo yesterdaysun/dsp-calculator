@@ -65,7 +65,7 @@
         {"name": "Prism(棱镜)", "key_name": "prism", "tier": 2, "stack_size": 100},
         {"name": "Electric motor(电动机)", "key_name": "electric_motor", "tier": 3, "stack_size": 50},
         {"name": "Microcrystalline component(微晶元件)", "key_name": "microcrystalline_component", "tier": 3, "stack_size": 200},
-        {"name": "Accelerant Mk.I(促进剂 Mk.I)", "key_name": "accelerant_mk_i", "tier": 3, "stack_size": 100},
+        {"name": "Proliferator Mk.I(促进剂 Mk.I)", "key_name": "accelerant_mk_i", "tier": 3, "stack_size": 100},
         {"name": "Casimir crystal(卡西米尔水晶)", "key_name": "casimir_crystal", "tier": 3, "stack_size": 50},
         {"name": "Strange matter(奇异物质)", "key_name": "strange_matter", "tier": 1, "stack_size": 50},
         {"name": "Titanium crystal(钛水晶)", "key_name": "titanium_crystal", "tier": 2, "stack_size": 100},
@@ -77,7 +77,7 @@
         {"name": "Photon combiner(光子合成器)", "key_name": "photon_combiner", "tier": 3, "stack_size": 100},
         {"name": "Electromagnetic turbine(电磁涡轮)", "key_name": "electromagnetic_turbine", "tier": 3, "stack_size": 50},
         {"name": "Processor(处理器)", "key_name": "processor", "tier": 3, "stack_size": 200},
-        {"name": "Accelerant Mk.II(促进剂 Mk.II)", "key_name": "accelerant_mk_ii", "tier": 1, "stack_size": 100},
+        {"name": "Proliferator Mk.II(促进剂 Mk.II)", "key_name": "accelerant_mk_ii", "tier": 1, "stack_size": 100},
         {"name": "Annihilation constraint sphere(湮灭约束球)", "key_name": "annihilation_constraint_sphere", "tier": 4, "stack_size": 20},
         {"name": "Titanium glass(钛玻璃)", "key_name": "titanium_glass", "tier": 3, "stack_size": 100},
         {"name": "Particle broadband(粒子宽带)", "key_name": "particle_broadband", "tier": 3, "stack_size": 50},
@@ -88,7 +88,7 @@
         {"name": "Particle container(粒子容器)", "key_name": "particle_container", "tier": 3, "stack_size": 50},
         {"name": "Super-magnetic ring(超磁环)", "key_name": "super-magnetic_ring", "tier": 3, "stack_size": 50},
         {"name": "Graviton lens(引力透镜)", "key_name": "graviton_lens", "tier": 3, "stack_size": 50},
-        {"name": "Accelerant Mk.III(促进剂Mk.III)", "key_name": "accelerant_mk_iii", "tier": 3, "stack_size": 100},
+        {"name": "Proliferator Mk.III(促进剂Mk.III)", "key_name": "proliferator_mk_iii", "tier": 3, "stack_size": 100},
         {"name": "Space warper(空间折跃)", "key_name": "space_warper", "tier": 3, "stack_size": 100},
         {"name": "Plane filter(滤波器)", "key_name": "plane_filter", "tier": 3, "stack_size": 200},
         {"name": "Quantum chip(量子芯片)", "key_name": "quantum_chip", "tier": 3, "stack_size": 200},
@@ -797,22 +797,22 @@
             "product": ["strange_matter", 1]
         },
         {
-            "name": "Accelerant Mk.I(促进剂 Mk.I)", "key_name": "accelerant_mk_i", "category": "crafting1",
+            "name": "Proliferator Mk.I(促进剂 Mk.I)", "key_name": "proliferator_mk_i", "category": "crafting1",
             "time": 2,
             "ingredients": [["coal_ore", 2]],
-            "product": ["accelerant_mk_i", 1]
+            "product": ["proliferator_mk_i", 1]
         },
         {
-            "name": "Accelerant Mk.II(促进剂 Mk.II)", "key_name": "accelerant_mk_ii", "category": "crafting1",
+            "name": "Proliferator Mk.II(促进剂 Mk.II)", "key_name": "proliferator_mk_ii", "category": "crafting1",
             "time": 4,
-            "ingredients": [["organic_crystal", 2], ["accelerant_mk_i", 1]],
-            "product": ["accelerant_mk_ii", 1]
+            "ingredients": [["diamond", 2], ["proliferator_mk_i", 1]],
+            "product": ["proliferator_mk_ii", 1]
         },
         {
-            "name": "Accelerant Mk.III(促进剂Mk.III)", "key_name": "accelerant_mk_iii", "category": "crafting1",
+            "name": "Proliferator Mk.III(促进剂Mk.III)", "key_name": "proliferator_mk_iii", "category": "crafting1",
             "time": 8,
-            "ingredients": [["casimir_crystal", 3], ["accelerant_mk_ii", 1]],
-            "product": ["accelerant_mk_iii", 1]
+            "ingredients": [["carbon_nanotube", 1], ["proliferator_mk_ii", 1]],
+            "product": ["proliferator_mk_iii", 1]
         },
         {
             "name": "Spray coater(喷涂机)", "key_name": "spray_coater", "category": "crafting1",
