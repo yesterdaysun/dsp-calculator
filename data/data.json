@@ -404,15 +404,15 @@
         },
         {
             "name": "Deuterium(氘)", "key_name": "deuterium", "category": "miniature_particle_collider",
-            "time": 5,
+            "time": 2.5,
             "ingredients": [["hydrogen", 10]],
             "product": ["deuterium", 5]
         },
         {
             "name": "Deuteron fuel rod(氘核燃料棒)", "key_name": "deuteron_fuel_rod", "category": "crafting",
-            "time": 6,
-            "ingredients": [["titanium_alloy", 1], ["deuterium", 10], ["super-magnetic_ring", 1]],
-            "product": ["deuteron_fuel_rod", 1]
+            "time": 12,
+            "ingredients": [["titanium_alloy", 1], ["deuterium", 20], ["super-magnetic_ring", 1]],
+            "product": ["deuteron_fuel_rod", 2]
         },
         {
             "name": "Annihilation constraint sphere(湮灭约束球)", "key_name": "annihilation_constraint_sphere", "category": "crafting",
@@ -675,7 +675,7 @@
         {
             "name": "Small carrier rocket(小型运载火箭)", "key_name": "small_carrier_rocket", "category": "crafting",
             "time": 6,
-            "ingredients": [["dyson_sphere_component", 2], ["deuteron_fuel_rod", 2], ["quantum_chip", 2]],
+            "ingredients": [["dyson_sphere_component", 2], ["deuteron_fuel_rod", 4], ["quantum_chip", 2]],
             "product": ["small_carrier_rocket", 1]
         },
         {
@@ -807,19 +807,19 @@
         {
             "name": "Proliferator Mk.I(促进剂 Mk.I)", "key_name": "proliferator_mk_i", "category": "crafting",
             "time": 2,
-            "ingredients": [["coal_ore", 2]],
+            "ingredients": [["coal_ore", 1]],
             "product": ["proliferator_mk_i", 1]
         },
         {
             "name": "Proliferator Mk.II(促进剂 Mk.II)", "key_name": "proliferator_mk_ii", "category": "crafting",
             "time": 4,
-            "ingredients": [["diamond", 2], ["proliferator_mk_i", 1]],
+            "ingredients": [["diamond", 1], ["proliferator_mk_i", 2]],
             "product": ["proliferator_mk_ii", 1]
         },
         {
             "name": "Proliferator Mk.III(促进剂Mk.III)", "key_name": "proliferator_mk_iii", "category": "crafting",
             "time": 8,
-            "ingredients": [["carbon_nanotube", 1], ["proliferator_mk_ii", 1]],
+            "ingredients": [["carbon_nanotube", 1], ["proliferator_mk_ii", 2]],
             "product": ["proliferator_mk_iii", 1]
         },
         {
