@@ -67,6 +67,7 @@ export function displayItems(spec, totals, ignore) {
         display.rate = rate
         display.building = spec.getBuilding(recipe)
         display.count = spec.getCount(recipe, rate)
+
         display.overclock = overclockString
         display.powerShardCount = display.ignore ? 0 : Math.ceil(Math.max(overclock.toFloat() - 1, 0) / 0.5)
         powerShardsUsed += display.powerShardCount

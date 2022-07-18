@@ -111,9 +111,7 @@ tr.setting-row td:first-child {
 td.setting-label {
     text-align: right;
 }
-div#resource_settings, div#alt_recipe_settings {
-    padding-left: 3em;
-}
+
 .top {
     vertical-align: top;
 }
@@ -159,6 +157,31 @@ input.prec {
 #assembler_selector input[type="radio"]:checked + label {
     background: var(--accent);
 }
+
+
+
+#smelting_selector input[type="radio"] {
+    display: none;
+}
+#smelting_selector input[type="radio"] + label {
+    cursor: pointer;
+    background: var(--light);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin: 2px;
+    padding: 2px;
+}
+#smelting_selector input[type="radio"] + label:hover {
+    background: var(--bright);
+}
+#smelting_selector input[type="radio"]:checked + label {
+    background: var(--accent);
+}
+
+
+
 
 table.resource {
     border-collapse: collapse;

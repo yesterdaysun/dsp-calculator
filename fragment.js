@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 import {DEFAULT_RATE, DEFAULT_RATE_PRECISION, DEFAULT_COUNT_PRECISION} from "./align.js"
 import {DEFAULT_TAB, currentTab} from "./events.js"
-import {spec, DEFAULT_PURITY, DEFAULT_BELT, DEFAULT_ASSEMBLER} from "./factory.js"
+import {spec, DEFAULT_PURITY, DEFAULT_BELT, DEFAULT_ASSEMBLER, DEFAULT_SMELTER} from "./factory.js"
 import {Rational} from "./rational.js"
 
 export function formatSettings() {
@@ -36,6 +36,10 @@ export function formatSettings() {
 
     if (spec.assembler.key !== DEFAULT_ASSEMBLER) {
         settings += "assembler=" + spec.assembler.key + "&"
+    }
+
+    if (spec.smelter.key !== DEFAULT_SMELTER) {
+        settings += "smelter=" + spec.smelter.key + "&"
     }
 
     settings += "items="
